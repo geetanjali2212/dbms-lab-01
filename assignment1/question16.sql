@@ -1,0 +1,19 @@
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    first_name VARCHAR(20),
+    last_name VARCHAR(25),
+    email VARCHAR(50),
+    phone_number VARCHAR(20),
+    hire_date DATE,
+    job_id VARCHAR(10),
+    salary DECIMAL(8,2),
+    commission DECIMAL(5,2),
+    manager_id DECIMAL(6,0),
+    department_id DECIMAL(4,0),
+
+    FOREIGN KEY (department_id)
+    REFERENCES departments(department_id),
+
+    FOREIGN KEY (job_id)
+    REFERENCES jobs(job_id)
+) ENGINE=InnoDB;
